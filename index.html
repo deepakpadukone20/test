@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <form>
+        <input type="radio" onchange="radioChange(this)" name="gender" value="swedish" checked on> Swedish Cars
+        <br>
+        <input type="radio" onchange="radioChange(this)" name="gender" value="german"> German Cars
+        <br>
+        <select>
+            <optgroup label="Swedish Cars" data-name="swedish" id="swedish">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="German Cars" data-name="german" id='german' style="display:none">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </optgroup>
+        </select>
+    </form>
+
+</body>
+<script>
+    function radioChange(rdb) {
+        if (rdb.value === 'all') {
+            document.querySelector('#swedish').style.display = '';
+            document.querySelector('#german').style.display = '';
+        } else if(rdb.value === 'swedish') {
+            document.querySelector('#swedish').style.display = '';
+            document.querySelector('#german').style.display = 'none';
+        }else {
+            document.querySelector('#swedish').style.display = 'none';
+            document.querySelector('#german').style.display = '';
+        }
+        console.log(rdb.value);
+    }
+
+</script>
+
+</html>
